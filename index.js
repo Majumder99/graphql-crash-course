@@ -28,6 +28,27 @@ const resolvers = {
       return db.authors.find((author) => author.id === id);
     },
   },
+  Game: {
+    reviews(parent) {
+      // parent means games
+      // game query and id is the paremeter under game we will fetch review so game is parent. and fetching review
+      // id equals to parent meaning game id
+      return db.reviews.filter((review) => review.game_id === parent.id);
+    },
+  },
+  Author: {
+    reviews(parent) {
+      return db.reviews.filter((review) => review.author_id === parent.id);
+    },
+  },
+  Review: {
+    game(parent) {
+      return db.games.find((game) => game.id === parent.game_id);
+    },
+    author(parent) {
+      return db.authors.find((author) => author.id === parent.author_id);
+    },
+  },
 };
 
 // server setup

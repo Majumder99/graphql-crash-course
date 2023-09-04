@@ -24,16 +24,70 @@ let games = [
 ];
 
 let reviews = [
-  { id: "1", rating: 4, content: "Great game but some bugs." },
-  { id: "2", rating: 5, content: "Amazing experience!" },
-  { id: "3", rating: 3, content: "Average gameplay." },
-  { id: "4", rating: 2, content: "Poor graphics." },
-  { id: "5", rating: 5, content: "Excellent story!" },
-  { id: "6", rating: 1, content: "Full of bugs." },
-  { id: "7", rating: 4, content: "Good but not great." },
-  { id: "8", rating: 5, content: "Immersive experience." },
-  { id: "9", rating: 3, content: "Okay game." },
-  { id: "10", rating: 2, content: "Disappointing." },
+  {
+    id: "1",
+    rating: 4,
+    content: "Great game but some bugs.",
+    author_id: "1",
+    game_id: "1",
+  },
+  {
+    id: "2",
+    rating: 5,
+    content: "Amazing experience!",
+    author_id: "2",
+    game_id: "3",
+  },
+  {
+    id: "3",
+    rating: 3,
+    content: "Average gameplay.",
+    author_id: "3",
+    game_id: "3",
+  },
+  {
+    id: "4",
+    rating: 2,
+    content: "Poor graphics.",
+    author_id: "4",
+    game_id: "4",
+  },
+  {
+    id: "5",
+    rating: 5,
+    content: "Excellent story!",
+    author_id: "5",
+    game_id: "5",
+  },
+  {
+    id: "6",
+    rating: 1,
+    content: "Full of bugs.",
+    author_id: "4",
+    game_id: "6",
+  },
+  {
+    id: "7",
+    rating: 4,
+    content: "Good but not great.",
+    author_id: "7",
+    game_id: "7",
+  },
+  {
+    id: "8",
+    rating: 5,
+    content: "Immersive experience.",
+    author_id: "8",
+    game_id: "8",
+  },
+  { id: "9", rating: 3, content: "Okay game.", author_id: "9", game_id: "9" },
+  {
+    id: "10",
+    rating: 2,
+    content: "Disappointing.",
+    author_id: "10",
+    game_id: "10",
+  },
 ];
 
 let authors = [
