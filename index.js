@@ -1,9 +1,42 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 
+// db
+import db from "./_db.js";
+
+// types
+import { typeDefs } from "./schema.js";
+const resolvers = {
+  Query: {
+    games() {
+      return db.games;
+    },
+    reviews() {
+      return db.reviews;
+    },
+    authors() {
+      return db.authors;
+    },
+    // review(parent=used for relational databse, args object, context=authentication)
+    review(_, { id }) {
+      return db.reviews.find((review) => review.id === id);
+    },
+    game(_, { id }) {
+      return db.games.find((game) => game.id === id);
+    },
+    author(_, { id }) {
+      return db.authors.find((author) => author.id === id);
+    },
+  },
+};
+
 // server setup
 const server = new ApolloServer({
   // typeDefs(data types) and resolvers(functions)
+  // typedefs definitions of types of data, like author, games, etc the resources we want to query
+  typeDefs,
+  // resolvers = it will handle the queries
+  resolvers,
 });
 
 // The startStandaloneServer function is used to start an Apollo Server instance in
